@@ -1,0 +1,157 @@
+Learning Docker - 
+
+Check if docker is installed or not 
+
+- docker --version
+
+Check if docker-machine is installed or not 
+
+- docker-machine --version
+
+Check if docker-compose is installed or not 
+- docker-compose --version
+
+Get all commands for docker 
+
+- docker 
+
+Get all commands for docker-machine 
+
+- docker-machine 
+
+Get list of all commands 
+- docker-machine 
+
+Get ip of docker machine
+- docker-machine ip
+
+Get list of all docker machines 
+- docker-machine ls
+
+Get docker image 
+- docker pull dockerRepositoryName
+
+Get all the images 
+- docker images
+
+Run the docker image in container 
+- docker run imageName 
+
+To see running container or Instance list 
+- docker ps
+
+Stop the container 
+- docker stop containerId
+
+To see stopped containner (all)
+- docker stop -a
+
+To remove the container 
+- docker rm containerId
+
+To run docker image into container with giving proper port number 
+- docker run -d -p 80:80 dockerImageName
+  Here -d for demon mode 
+
+To give name to containers 
+- docker run -d -p 80:80 --name anyName dockerImageName
+		
+To run composer file
+- docker-compose up 
+
+To run docker compose in demon mode 
+- docker-compose up -d
+
+To see logs 
+- docker-compose logs
+
+To stop everything 
+- docker-compose down
+
+To get everything required 
+- docker-compose build
+
+To do everything 
+- docker-compose build --no-cache
+	
+To get terminal access of docker container 
+- docker exec -it <containerIdOrName> bash
+
+To attach to docker container 
+- docker attach <containerIdOrName>
+
+To use volume 
+- docker run --rm -v %CD%:/files imageIname command filename
+
+To inspect the docker container 
+- docker inspect containerName 
+
+To see logs 
+- docker logs containerName
+
+To see logs in interactive mode 
+- docker logs containerName -f 
+
+To build an image from Dockerfile 
+- docker build -t containerName . 
+  To run that newly created image 
+  - docker run --rm -p 8080:3000 -d containerName
+  
+To remove an image 
+- docker rmi imageName
+
+To kill container 
+- docker rm -f containerIdOrNam
+
+To kill networs 
+- docker network prune 
+
+To forcefully remove image 
+- docker rmi cimageName -f 
+
+To check all the networks 
+- docker network ls 
+
+To connect to a network 
+- docker run -it --rm --network networkName imageName /bin/bash
+
+To delete a container with it's volume
+- docker rm -v containerName
+
+To use host source code as a volume for container 
+- docker run -p 8000:3000 -v $(pwd):/var/www -w "/var/www" imageName command 
+ ex - docker run -p 8000:3000 -v $(pwd):/var/www -w "/var/www" node npm start
+
+
+To stop all containers:
+- docker kill $(docker ps -q)
+
+To remove all containers
+- docker rm $(docker ps -a -q)
+
+To remove all docker images
+- docker rmi $(docker images -q)
+
+To constally keep running a container 
+- docker run -t imageName 
+
+To see all the volumes 
+- docker volume ls 
+
+To remove all the unused volumes 
+- docker volume prune
+
+To remove docker container with it's volume 
+- docker rm -v containerId
+
+
+For angular ng serve 
+- docker run -t -p 4200:4200 -v $(pwd):/usr/app -w "/usr/app" ng-cli ng serve --host=0.0.0.0 --poll=1000
+
+Run Maven Clean Install
+- docker run -it -v "$PWD":/usr/src -w /usr/src markhobson/maven-chrome mvn clean verify
+- docker run -it -v "$PWD":/usr/src -w /usr/src markhobson/maven-chrome mvn clean install
+
+
+Run Jar in Docker 
+- docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp openjdk java -jar target/mvn-hello-world-1.0-SNAPSHOT.jar

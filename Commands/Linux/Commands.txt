@@ -1,0 +1,41 @@
+
+*) To copy the content of a file 
+	cat filename.extension 
+
+*) To update Ubuntu 
+	sudo apt-get update
+
+*) To see current directory structure 
+	pwd
+
+*) kill process
+	kill pid
+
+*) Find all running process 
+	ps -ef
+
+*) To rename filename 
+	mv oldFileName newFileName
+
+*)	Open a screen
+	-- screen
+
+*)	List all the screens 
+	-- screen -ls
+
+*)  Attach to particular screen 
+	-- screen -r screenPid
+
+*)	Open a screen with name 
+	-- screen -S screenName 
+
+*) 	Delete a screen 
+	-- screen -X -S screenName/id kill
+
+*)  To get out of screen 
+	-- control + A + D
+
+*)  To search previous commands 
+	-- control + r
+
+*)
